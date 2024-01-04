@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    background-image: url("../image/Fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+:root {
+    --body-color: white;
+    --bnt-color: #4169e1;
+    --bnt-hover-color: blue;
+    --text-color: black;
+    --text-light-color: white;
+    --border-color: #ccc;
+    --bnt-top-color: #cccccc80;
+    --shadow-color: rgba(0, 0, 0, 0.342);
+    --switch-color: #4169e1;
+}
+
+.darkmode{
+    --text-color: white;
+    --body-color: #18191a;
+}
+
+/*-----------------------modelo-----------------------*/
+
+.modelo-BD{
+    margin-top: 40px;
+    padding: 40px; 
+    text-align: center;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modelo-BD img{
+    width: 100%;
+    max-width: 400px;
+}
+
+.modelo-BD img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
+.modelo{
+    width: 40%;
+    margin: 10px auto;
+}
+
+.modelo img{
+    width: 100%;
+}
+
+.modelo img:hover{
+    transform: none;
+    transition: none;
+}
+
+/*-----------------------modelo-----------------------*/
+
+/*-----------------------Avisos-----------------------*/
+
+.inputcontrol i {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    visibility: hidden;
+    font-size: 18px;
+}
+
+.inputcontrol small {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    visibility: hidden;
+    font-size: 14px;
+}
+
+/*-----------------------Avisos-----------------------*/
+
+/*-----------------------Sucesso/Erro-----------------------*/
+
+.inputcontrol.sucesso input {
+    border-color: #2ecc71;
+}
+  
+.inputcontrol.erro input {
+    border-color: #ef3b47;
+}
+  
+.inputcontrol.sucesso i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+  
+.inputcontrol.erro i.fa-exclamation-circle {
+    color: #ef3b47;
+    visibility: visible;
+}
+  
+.inputcontrol.erro small {
+    visibility: visible;
+    color: #ef3b47;
+}
+
+/*-----------------------Sucesso/Erro-----------------------*/
+
+@media screen and (max-width: 1024px){
+    
+    form{
+        width: 100%;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    form input{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    
+    form{
+        width: 100%;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    form input{
+        font-size: 16px;
+    }
+
+}

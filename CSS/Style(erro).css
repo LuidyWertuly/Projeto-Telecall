@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    background-image: url("../image/Fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+:root {
+    --body-color: white;
+    --bnt-color: #4169e1;
+    --bnt-hover-color: blue;
+    --text-color: black;
+    --text-light-color: white;
+    --border-color: #ccc;
+    --bnt-top-color: #cccccc80;
+    --shadow-color: rgba(0, 0, 0, 0.342);
+    --switch-color: #4169e1;
+}
+
+.darkmode{
+    --text-color: white;
+    --body-color: #18191a;
+}
+
+/*-----------------------404-----------------------*/
+
+.container{
+    margin-top: 40px;
+    text-align: center;
+    padding: 40px;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container img{
+    width: 100%;
+    max-width: 400px;
+}
+
+.container img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
+.erro{
+    background-color: var(--body-color);
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    text-align: center;
+    width: 45%;
+    margin: 10px auto;
+    padding: 50px 20px 50px 20px;
+    font-size: 20px;
+    display: block;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+    color: var(--text-color);
+}
+
+.erro h1{
+    font-size: 35px !important;
+}
+
+.erro h3{
+    font-size: 30px !important;
+}
+
+.erro p{
+    font-size: 25px !important;
+    margin-bottom: 20px;
+}
+
+.erro a{
+    text-decoration: none;
+    color: var(--bnt-color);
+}
+
+/*-----------------------404-----------------------*/
+
+ @media screen and (max-width: 1024px){
+    .erro{
+        width: 45%;
+    }
+    
+    .erro h1{
+        font-size: 35px !important;
+    }
+    
+    .erro h3{
+        font-size: 30px !important;
+    }
+    
+    .erro p{
+        font-size: 25px !important;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .erro{
+        width: 90%;
+    }
+} 

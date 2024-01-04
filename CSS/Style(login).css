@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Sans-serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-image: url("../image/Fundo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --body-color: white;
+  --bnt-color: #4169e1;
+  --bnt-hover-color: blue;
+  --text-color: black;
+  --text-light-color: white;
+  --border-color: #ccc;
+  --bnt-top-color: #cccccc80;
+  --shadow-color: rgba(0, 0, 0, 0.342);
+  --switch-color: #4169e1;
+}
+
+.darkmode {
+  --text-color: white;
+  --body-color: #18191a;
+}
+
+/*-----------------------login-----------------------*/
+
+.login {
+  margin-top: 40px;
+  text-align: center;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login img:hover {
+  transform: scale(1.1);
+  transition: all 0.7s;
+}
+
+form {
+  background-color: var(--body-color);
+  border: 1px solid var(--border-color);
+  border-radius: 40px;
+  text-align: center;
+  width: 40%;
+  margin: 10px auto;
+  padding: 30px 70px 30px 70px;
+  font-size: 20px;
+  display: block;
+  box-shadow: 2px 2px 1px var(--shadow-color);
+  color: var(--text-color);
+}
+
+form input {
+  width: 95%;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid var(--bnt-color);
+  border-radius: 20px;
+  font-size: 18px;
+  margin: 20px 10px 10px 10px;
+}
+
+form input[type="button"] {
+  background-color: var(--bnt-color);
+  color: var(--text-light-color);
+  height: 40px;
+  cursor: pointer;
+}
+
+form input[type="button"]:hover {
+  background-color: var(--bnt-hover-color);
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+.checkbox {
+  text-align: justify;
+  width: 50%;
+}
+
+form input[type="checkbox"] {
+  width: 20px;
+  height: 14px;
+  border: 1px solid var(--bnt-color);
+}
+
+.inputcontrol {
+  position: relative;
+}
+
+.lado {
+  display: flex;
+  width: 100%;
+  padding: 0 5px;
+  margin-top: -20px;
+}
+
+.checkbox label {
+  margin-left: -15px;
+}
+
+#lem-senha {
+  cursor: pointer;
+  display: inline;
+  font-size: 16px !important;
+}
+
+.limpar {
+  width: 50%;
+  text-align: end;
+  margin-top: -5px;
+}
+
+#bnt-limpar {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+  width: 70px;
+}
+
+.links {
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 20%;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--bnt-color);
+  font-weight: 400;
+  font-style: italic;
+  border-bottom: 1px solid var(--bnt-color);
+}
+
+#erro{
+  display: none;
+  color: #ef3b47;
+  font-size: 14px;
+}
+
+/*.switch{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    margin: 1px auto;
+}*/
+
+/* Estilo básico do switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 125px;
+  height: 30px;
+}
+
+/* Estilização da caixa de fundo */
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+/* Estilização do círculo deslizante (knob) */
+.toggle-switch .slider:before {
+  position: absolute;
+  content: attr(data-label-off); /* Rótulo inicial (OFF) */
+  height: 26px;
+  width: 70%;
+  line-height: 26px;
+  text-align: center;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: var(--switch-color);
+  color: var(--text-light-color);
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+/* Quando o switch estiver marcado (ON) */
+.toggle-switch input:checked + .slider:before {
+  content: attr(data-label-on); /* Rótulo quando está ON */
+  transform: translateX(33px); /* Posição do rótulo ON */
+}
+
+/* Estilização do elemento de entrada (hidden checkbox) - ocultar o checkbox padrão */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.olho{
+  position: absolute;
+  right: 15px;
+  top: 48px;
+  color: var(--bnt-color);
+}
+
+/*-----------------------login-----------------------*/
+
+/*-----------------------Avisos-----------------------*/
+
+.inputcontrol i {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  visibility: hidden;
+  font-size: 18px;
+}
+
+.inputcontrol small {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  visibility: hidden;
+  font-size: 14px;
+}
+
+/*-----------------------Avisos-----------------------*/
+
+/*-----------------------Sucesso/Erro-----------------------*/
+
+.inputcontrol.sucesso input {
+  border-color: #2ecc71;
+}
+
+.inputcontrol.erro input {
+  border-color: #ef3b47;
+}
+
+.inputcontrol.sucesso i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.inputcontrol.erro i.fa-exclamation-circle {
+  color: #ef3b47;
+  visibility: visible;
+}
+
+.inputcontrol.erro small {
+  visibility: visible;
+  color: #ef3b47;
+}
+
+/*-----------------------Sucesso/Erro-----------------------*/
+
+@media screen and (max-width: 1024px) {
+  form {
+    width: 100%;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  form input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 100%;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  form input {
+    font-size: 16px;
+  }
+}

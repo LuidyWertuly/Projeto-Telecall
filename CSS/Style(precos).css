@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-image: url("../image/Fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    background-attachment: fixed;
+}
+
+:root {
+    --body-color: white;
+    --bnt-color: #4169e1;
+    --bnt-hover-color: blue;
+    --text-color: black;
+    --text-light-color: white;
+    --border-color: #ccc;
+    --bnt-top-color: #cccccc80;
+    --shadow-color: rgba(0, 0, 0, 0.342);
+}
+
+.darkmode{
+    --text-color: white;
+    --body-color: #18191a;
+}
+
+/*-----------------------preços-----------------------*/
+
+.preços{
+    min-height:100vh;
+    margin-top: 90px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.valores{
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+#black{
+    background-color: var(--body-color) !important;
+    color: var(--text-color) !important;
+}
+
+#title{
+    font-size: 30px;
+}
+
+/*-----------------------preços-----------------------*/

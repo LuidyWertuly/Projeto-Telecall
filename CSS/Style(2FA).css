@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: var(--body-color);
+}
+
+:root {
+    --body-color: white;
+    --bnt-color: #4169e1;
+    --bnt-hover-color: blue;
+    --text-color: black;
+    --text-light-color: white;
+    --border-color: #ccc;
+    --bnt-top-color: #cccccc80;
+    --shadow-color: rgba(0, 0, 0, 0.342);
+}
+
+.darkmode{
+    --text-color: white;
+    --body-color: #18191a;
+}
+
+/*-----------------------Main-----------------------*/
+
+.main{
+    margin-top: 40px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.main-content{
+    padding: 40px;
+    width: 30%;
+    line-height: 1.2;
+    text-align: start;
+}
+
+.main-content h1{
+    margin-bottom: 10px;
+}
+
+.main-content p{
+    margin-bottom: 30px;
+}
+
+.main-content button{
+    cursor: pointer;
+    border: none;
+    padding: 10px 50px;
+    background-color: var(--bnt-color);
+    border-radius: 20px;
+    color: var(--text-light-color);
+    font-size: 20px;
+}
+
+
+.main-content button:hover{
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.image-main{
+    width: 70%;
+}
+
+.image-main img{
+   width: 100%;
+}
+
+/*-----------------------Main-----------------------*/
+
+
+/*-----------------------Divisor-----------------------*/
+
+.divisor{
+    border-bottom: 2px solid var(--border-color);
+}
+
+/*-----------------------Divisor-----------------------*/
+
+
+/*-----------------------Conteiner-----------------------*/
+
+.conteiner{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.content{
+    width: 50%;
+    padding: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 40px;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.content h2{
+    margin-bottom: 10px;
+    color: var(--bnt-color);
+}
+
+.content h3{
+    color: var(--bnt-color);
+    margin-bottom: 10px;
+}
+
+.content p{
+    text-align: start;
+}
+
+#margin{
+    margin: 20px 0;
+}
+
+.image{
+    width: 50%;
+}
+
+.image img{
+    width: 100%;
+}
+
+/*-----------------------Conteiner-----------------------*/
+
+
+/*-----------------------funciona-----------------------*/
+
+.funciona{
+    text-align: center;
+    padding: 40px;
+    color: var(--text-color);
+}
+
+.funciona h2{
+    margin: 40px;
+}
+
+.lado{
+    display: flex;
+    text-align: start;
+}
+
+.passo{
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    padding: 10px 30px 30px 30px;
+    margin: 10px;
+    line-height: 1.2;
+    width: 25%;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+}
+
+#img1{
+    width: 100%;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+#img2{
+    max-width: 140px;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+#img3{
+    max-width: 80px;
+    margin: 10px auto 20px;
+    display: block;
+}
+
+/*-----------------------funciona-----------------------*/
+
+
+/*-----------------------Funcoes-----------------------*/
+
+.funcoes{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-funcoes{
+    padding: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 40px;
+    width: 50%;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+}
+
+.content-funcoes h2{
+    margin-bottom: 20px;
+    color: var(--bnt-color);
+}
+
+.content-funcoes ul{
+    font-size: 18px;
+    text-align: start;
+    color: var(--bnt-color);
+}
+
+.content-funcoes ul li span{
+    color: var(--text-color);
+}
+
+.image-funcoes{
+    width: 50%;
+}
+
+.image-funcoes img{
+    width: 100%;
+}
+
+/*-----------------------Funcoes-----------------------*/
+
+/*-----------------------Responsividade-----------------------*/
+
+
+@media screen and (max-width: 1024px){
+
+    .main{
+        width: 100%;
+        align-items: center;
+        align-content: center;
+    }
+
+    .main-content{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+
+    .image-main{
+        width: 60%;
+    }
+
+    .conteiner{
+        width: 100%;
+    }
+
+    .funciona{
+        width: 100%;
+    }
+
+    .lado{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+    }
+
+    .passo{
+        width: 40%;
+        margin: 10px auto;
+    }
+
+    .funcoes{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content-funcoes{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .image-funcoes{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    
+    .main{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+
+    .main-content{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .image-main{
+        width: 100%;
+    }
+
+    .conteiner{
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .content{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .image{
+        width: 100%;
+    }
+
+    .funciona{
+        width: 100%;
+    }
+
+    .lado{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+
+    .passo{
+        width: 80%;
+    }
+
+    .funcoes{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content-funcoes{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .image-funcoes{
+        width: 100%;
+    }
+
+}
+
+
+/*-----------------------Responsividade-----------------------*/

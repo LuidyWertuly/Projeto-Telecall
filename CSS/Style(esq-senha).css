@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Sans-serif;
+    scroll-behavior: smooth;
+}
+
+html{
+    background-image: url("../image/Fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100%;
+    background-attachment: fixed;   
+}
+
+body{
+    overflow-x: hidden;
+}
+
+:root {
+    --body-color: white;
+    --bnt-color: #4169e1;
+    --bnt-hover-color: blue;
+    --text-color: black;
+    --text-light-color: white;
+    --border-color: #ccc;
+    --bnt-top-color: #cccccc80;
+    --shadow-color: rgba(0, 0, 0, 0.342);
+}
+
+.darkmode{
+    --text-color: white;
+    --body-color: #18191a;
+}
+
+/*-----------------------esq-senha-----------------------*/
+
+.esq-senha{
+    margin-top: 40px;
+    text-align: center;
+    padding: 40px;
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.esq-senha img{
+    width: 100%;
+    max-width: 400px;
+}
+
+.esq-senha img:hover{
+    transform: scale(1.1);
+    transition: all 0.7s;
+}
+
+.info{
+    font-size: 18px;
+    padding: 30px 10px 0 10px;
+}
+
+.info h1{
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 16px;
+}
+
+.inserir{
+    padding: 10px 40px 20px 40px;
+}
+
+form{
+    background-color: var(--body-color);
+    border: 1px solid var(--border-color);
+    border-radius: 40px;
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    font-size: 20px;
+    box-shadow: 2px 2px 1px var(--shadow-color);
+    color: var(--text-color);
+}
+
+form input{
+    width: 95%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    border: 1px solid var(--bnt-color);
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+form input[type = button]{
+    background-color: var(--bnt-color);
+    color: var(--text-light-color);
+    height: 40px;
+    cursor: pointer;
+}
+
+form input[type = button]:hover{
+    background-color: var(--bnt-hover-color);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.inputcontrol {
+    position: relative;
+}
+
+/*-----------------------esq-senha-----------------------*/
+
+/*-----------------------Avisos-----------------------*/
+
+.inputcontrol i {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    visibility: hidden;
+    font-size: 18px;
+  }
+  
+  .inputcontrol small {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    visibility: hidden;
+    font-size: 14px;
+  }
+  
+  /*-----------------------Avisos-----------------------*/
+  
+  /*-----------------------Sucesso/Erro-----------------------*/
+  
+  .inputcontrol.sucesso input {
+    border-color: #2ecc71;
+  }
+  
+  .inputcontrol.erro input {
+    border-color: #ef3b47;
+  }
+  
+  .inputcontrol.sucesso i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+  }
+  
+  .inputcontrol.erro i.fa-exclamation-circle {
+    color: #ef3b47;
+    visibility: visible;
+  }
+  
+  .inputcontrol.erro small {
+    visibility: visible;
+    color: #ef3b47;
+  }
+  
+  /*-----------------------Sucesso/Erro-----------------------*/
+
+@media screen and (max-width: 1024px){
+    
+    .inserir{
+        padding: 10px 20px 2px 20px;
+    }
+
+    form{
+        width: 50%;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    form input{
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    
+    .inserir{
+        padding: 10px 20px 20px 20px;
+    }
+
+    form{
+        width: 100%;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    form input{
+        font-size: 16px;
+    }
+}
