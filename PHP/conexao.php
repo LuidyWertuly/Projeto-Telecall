@@ -1,8 +1,8 @@
 <?php
 
 $dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
+$dbUsername = 'admin';
+$dbPassword = 'admin';
 $dbName = 'registro';
 
 
