@@ -2,7 +2,7 @@
 
 $dbHost = 'localhost';
 $dbUsername = 'admin';
-$dbPassword = 'admin';
+$dbPassword = '12345678';
 $dbName = 'registro';
 
 
