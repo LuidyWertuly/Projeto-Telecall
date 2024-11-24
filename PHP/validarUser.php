@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $numLinhas = mysqli_num_rows($sql);
             }
             else if($numero == 2){
-                $sql= mysqli_query($conexao, "SELECT nomeMae FROM extras WHERE nomeMae = '$verificar' and login = '$login'") ;
+                $sql= mysqli_query($conexao, "SELECT nomeMãe FROM extras WHERE nomeMãe = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else{
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $numLinhas = mysqli_num_rows($sql);
             }
             else if($numero == 2){
-                $sql= mysqli_query($conexao, "SELECT nomeMae FROM extras WHERE nomeMae = '$verificar' and login = '$login'") ;
+                $sql= mysqli_query($conexao, "SELECT nomeMãe FROM extras WHERE nomeMãe = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else{
