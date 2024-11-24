@@ -28,18 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include_once('conexao.php');
 
         // Atualizar a tabela `usuarios`
-        $sqlUsuarios = mysqli_query($conexao, "UPDATE usuarios 
-                                               SET Cargo = '{$dados['cargo']}', 
-                                                   Login = '{$dados['login']}', 
-                                                   Senha = '{$dados['senha']}' 
-                                               WHERE IDUser = '{$dados['idUser']}'");
+        $sqlUsuarios = mysqli_query($conexao, "UPDATE usuarios SET Cargo = '{$dados['cargo']}', Login = '{$dados['login']}', Senha = '{$dados['senha']}' WHERE IDUser = '{$dados['idUser']}'");
 
         // Atualizar a tabela `extras`
-        $sqlExtras = mysqli_query($conexao, "UPDATE extras 
-                                             SET Cep = '{$dados['cep']}', 
-                                                 NomeMãe = '{$dados['nomeMae']}', 
-                                                 DTnascimento = '{$dados['DTnascimento']}' 
-                                             WHERE IDUser = '{$dados['idUser']}'");
+        $sqlExtras = mysqli_query($conexao, "UPDATE extras SET Cep = '{$dados['cep']}', NomeMãe = '{$dados['nomeMae']}', DTnascimento = '{$dados['DTnascimento']}' WHERE IDUser = '{$dados['idUser']}'");
 
         $retorno = 'erro';
 
@@ -81,9 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = mysqli_query($conexao, "SELECT usuarios.IDUser, usuarios.Cargo, usuarios.Login, usuarios.Senha, 
                                               extras.Cep, extras.NomeMãe, extras.DTnascimento 
-                                       FROM usuarios 
-                                       LEFT JOIN extras ON usuarios.IDUser = extras.IDUser 
-                                       WHERE $tipo = '$procura'");
+                                        FROM usuarios LEFT JOIN extras ON usuarios.IDUser = extras.IDUser WHERE $tipo = '$procura'");
 
         $usuarios = array();
 
