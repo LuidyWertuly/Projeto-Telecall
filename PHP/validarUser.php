@@ -20,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $numLinhas = mysqli_num_rows($sql);
             } else if ($numero == 2) {
                 $sql = mysqli_query($conexao, "
-                    SELECT extras.NomeMae 
+                    SELECT extras.NomeMãe 
                     FROM extras 
                     INNER JOIN usuarios ON usuarios.IDUser = extras.IDUser 
-                    WHERE extras.NomeMae = '$verificar' AND usuarios.Login = '$login'
+                    WHERE extras.NomeMãe = '$verificar' AND usuarios.Login = '$login'
                 ");
                 $numLinhas = mysqli_num_rows($sql);
             } else {
@@ -79,10 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $numLinhas = mysqli_num_rows($sql);
             } else if ($numero == 2) {
                 $sql = mysqli_query($conexao, "
-                    SELECT extras.NomeMae 
+                    SELECT extras.NomeMãe 
                     FROM extras 
                     INNER JOIN usuarios ON usuarios.IDUser = extras.IDUser 
-                    WHERE extras.NomeMae = '$verificar' AND usuarios.Login = '$login'
+                    WHERE extras.NomeMãe = '$verificar' AND usuarios.Login = '$login'
                 ");
                 $numLinhas = mysqli_num_rows($sql);
             } else {
