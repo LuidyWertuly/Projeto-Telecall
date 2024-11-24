@@ -4,17 +4,15 @@
   $dados = json_decode($usuario, true);
 
   if (!empty($dados)) {
-    var_dump($dados); // Testando se as informações estão sendo armazenadas
+    var_dump($dados); // Testando se as informações estão sendo armazenadas corretamente
 
-    echo "bommmm";
+    echo "Processando...";
 
     include_once('conexao.php');
 
-    // Dados para a tabela `usuarios`
+    // Dados recebidos
     $login = $dados['login'];
     $senha = $dados['senha'];
-
-    // Dados para a tabela `extras`
     $cep = $dados['cep'];
     $DTnascimento = $dados['dataNascimento'];
     $nomeMae = $dados['nomeMaterno'];
@@ -33,14 +31,22 @@
       $resultExtras = mysqli_query($conexao, $queryExtras);
 
       if ($resultExtras) {
-        echo json_encode(['status' => 'sucesso', 'mensagem' => 'Usuário inserido com sucesso!']);
+        echo json_encode(['status' => 'sucesso', 'mensagem' => 'Usuário e dados adicionais inseridos com sucesso!']);
       } else {
-        echo json_encode(['status' => 'erro', 'mensagem' => 'Erro ao inserir dados na tabela extras.']);
+        echo json_encode([
+          'status' => 'erro',
+          'mensagem' => 'Erro ao inserir dados na tabela extras.',
+          'erro' => mysqli_error($conexao)
+        ]);
       }
     } else {
-      echo json_encode(['status' => 'erro', 'mensagem' => 'Erro ao inserir dados na tabela usuarios.']);
+      echo json_encode([
+        'status' => 'erro',
+        'mensagem' => 'Erro ao inserir dados na tabela usuarios.',
+        'erro' => mysqli_error($conexao)
+      ]);
     }
   } else {
-    echo "Ruimmm";
+    echo "Nenhum dado recebido.";
   }
 ?>
