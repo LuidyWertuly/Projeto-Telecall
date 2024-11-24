@@ -1,6 +1,6 @@
 <?php
 
-$dbHost = 'localhost';
+$dbHost = 'registro.cluster-cwisvlo5skyd.us-east-1.rds.amazonaws.com';
 $dbUsername = 'admin';
 $dbPassword = '12345678';
 $dbName = 'registro';
