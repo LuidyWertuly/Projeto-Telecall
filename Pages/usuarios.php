@@ -44,11 +44,11 @@
                   <label for="buscaTipo">Buscar por:</label>
                   <select name="buscaTipo" id="buscaTipo">
                      <option selected value="selecione">Selecione</option>
-                     <option value="idUser">ID</option>
-                     <option value="cargo">Cargo</option>
-                     <option value="login">Login</option>
-                     <option value="cep">CEP</option>
-                     <option value="nomeMae">Nome da mãe</option>
+                     <option value="IDUser">ID</option>
+                     <option value="Cargo">Cargo</option>
+                     <option value="Login">Login</option>
+                     <option value="Cep">CEP</option>
+                     <option value="NomeMãe">Nome da mãe</option>
                      <option value="DTnascimento">Data de nascimento</option>
                   </select>
                </div>
