@@ -59,15 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         include_once('conexao.php');
 
         for ($i = 0; $i <= 49; $i++) {
-            $sqlUsuarios = mysqli_query($conexao, "INSERT INTO usuarios (Cargo, Login, Senha) 
-                                                   VALUES ('user', 'teste$i', 'teste123')");
+            $sqlUsuarios = mysqli_query($conexao, "INSERT INTO usuarios (Cargo, Login, Senha) VALUES ('user', 'teste$i', 'teste123')");
 
             if ($sqlUsuarios) {
                 $idInserido = mysqli_insert_id($conexao); // Obtém o ID do último usuário inserido
                 
                 // Inserir dados na tabela `extras`
-                mysqli_query($conexao, "INSERT INTO extras (IDExtra, Cep, NomeMãe, DTnascimento, IDUser) 
-                                        VALUES ('$idInserido', '12345678', 'mãe dos testes', '1852-12-01', '$idInserido')");
+                mysqli_query($conexao, "INSERT INTO extras (IDUser, Cep, NomeMãe, DTnascimento) VALUES ('$idInserido', '12345678', 'mãe dos testes', '1852-12-01')");
             }
         }
 
