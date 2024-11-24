@@ -17,6 +17,7 @@
     $nomeMãe = $dados['nomeMaterno'];
   
     $result = mysqli_query($conexao, "INSERT INTO usuarios(cargo,login,senha,cep,nomeMae,DTnascimento) VALUES ('user','$login', '$senha', '$cep','$nomeMãe','$DTnascimento')");
+    $result2 = mysqli_query($conexao, "INSERT INTO extras(cep,nomeMae,DTnascimento) VALUES ('$cep','$nomeMãe','$DTnascimento')");
 
   }
 

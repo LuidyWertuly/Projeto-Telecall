@@ -4,8 +4,18 @@ require('../Assets/FPDF/fpdf.php');
 //Conectar ao banco de dados
 include_once('conexao.php');
 
-//Consulta SQL para obter todos os usuários
-$query = "SELECT * FROM usuarios";
+//Consulta SQL para combinar dados das tabelas usuarios e extras
+$query = "SELECT 
+            usuarios.IDUser AS idUser, 
+            usuarios.Cargo AS cargo, 
+            usuarios.Login AS login, 
+            usuarios.Senha AS senha, 
+            extras.Cep AS cep, 
+            extras.NomeMãe AS nomeMae, 
+            extras.DTnascimento AS DTnascimento 
+          FROM usuarios
+          LEFT JOIN extras ON usuarios.IDUser = extras.IDUser";
+
 $result = mysqli_query($conexao, $query);
 
 //Criar instância do FPDF
@@ -37,9 +47,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     $pdf->Cell(30, 10, $row['cargo'], 1);
     $pdf->Cell(30, 10, $row['login'], 1);
     $pdf->Cell(30, 10, $row['senha'], 1);
-    $pdf->Cell(30, 10, $row['cep'], 1);
-    $pdf->Cell(80, 10, iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $row['nomeMae']), 1);
-    $pdf->Cell(50, 10, $row['DTnascimento'], 1);
+    $pdf->Cell(30, 10, $row['cep'] ?? 'N/A', 1); // Exibe 'N/A' caso o campo seja nulo
+    $pdf->Cell(80, 10, iconv('UTF-8', 'ISO-8859-1//TRANSLIT', $row['nomeMae'] ?? 'N/A'), 1);
+    $pdf->Cell(50, 10, $row['DTnascimento'] ?? 'N/A', 1); // Exibe 'N/A' caso o campo seja nulo
     $pdf->Ln(); //Nova linha
 }
 

@@ -11,15 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include_once('conexao.php');
 
             if($numero == 1){
-                $sql = mysqli_query($conexao, "SELECT DTnascimento FROM usuarios WHERE DTnascimento = '$verificar' and login = '$login'") ;
+                $sql = mysqli_query($conexao, "SELECT DTnascimento FROM extras WHERE DTnascimento = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else if($numero == 2){
-                $sql= mysqli_query($conexao, "SELECT nomeMae FROM usuarios WHERE nomeMae = '$verificar' and login = '$login'") ;
+                $sql= mysqli_query($conexao, "SELECT nomeMae FROM extras WHERE nomeMae = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else{
-                $sql = mysqli_query($conexao, "SELECT cep FROM usuarios WHERE cep = '$verificar' and  login = '$login'") ;
+                $sql = mysqli_query($conexao, "SELECT cep FROM extras WHERE cep = '$verificar' and  login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
 
@@ -63,15 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include_once('conexao.php');
 
             if($numero == 1){
-                $sql = mysqli_query($conexao, "SELECT DTnascimento FROM usuarios WHERE DTnascimento = '$verificar' and login = '$login'") ;
+                $sql = mysqli_query($conexao, "SELECT DTnascimento FROM extras WHERE DTnascimento = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else if($numero == 2){
-                $sql= mysqli_query($conexao, "SELECT nomeMae FROM usuarios WHERE nomeMae = '$verificar' and login = '$login'") ;
+                $sql= mysqli_query($conexao, "SELECT nomeMae FROM extras WHERE nomeMae = '$verificar' and login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
             else{
-                $sql = mysqli_query($conexao, "SELECT cep FROM usuarios WHERE cep = '$verificar' and  login = '$login'") ;
+                $sql = mysqli_query($conexao, "SELECT cep FROM extras WHERE cep = '$verificar' and  login = '$login'") ;
                 $numLinhas = mysqli_num_rows($sql);
             }
 
