@@ -35,7 +35,7 @@ if (!empty($dados)) {
     $idUser = mysqli_insert_id($conexao);
 
     // Inserção na tabela `extras` com referência ao `idUser`
-    $queryExtras = "INSERT INTO extras (idUser, cep, nomeMae, DTnascimento) 
+    $queryExtras = "INSERT INTO extras (idUser, cep, nomeMãe, DTnascimento) 
                     VALUES ('$idUser', '$cep', '$nomeMae', '$DTnascimento')";
     $resultExtras = mysqli_query($conexao, $queryExtras);
 
