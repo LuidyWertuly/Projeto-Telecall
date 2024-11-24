@@ -3,26 +3,44 @@
 
   $dados = json_decode($usuario, true);
 
-  if ($dados != "") {
-     var_dump($dados); //testando se as informações estão sendo armazenada 
+  if (!empty($dados)) {
+    var_dump($dados); // Testando se as informações estão sendo armazenadas
 
-     echo "bommmm'";
+    echo "bommmm";
 
     include_once('conexao.php');
 
+    // Dados para a tabela `usuarios`
     $login = $dados['login'];
     $senha = $dados['senha'];
+
+    // Dados para a tabela `extras`
     $cep = $dados['cep'];
     $DTnascimento = $dados['dataNascimento'];
-    $nomeMãe = $dados['nomeMaterno'];
-  
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(cargo,login,senha,cep,nomeMae,DTnascimento) VALUES ('user','$login', '$senha', '$cep','$nomeMãe','$DTnascimento')");
-    $result2 = mysqli_query($conexao, "INSERT INTO extras(cep,nomeMae,DTnascimento) VALUES ('$cep','$nomeMãe','$DTnascimento')");
+    $nomeMae = $dados['nomeMaterno'];
 
-  }
+    // Inserção na tabela `usuarios`
+    $queryUsuario = "INSERT INTO usuarios (cargo, login, senha) VALUES ('user', '$login', '$senha')";
+    $resultUsuario = mysqli_query($conexao, $queryUsuario);
 
-  else{
+    if ($resultUsuario) {
+      // Obter o último ID inserido na tabela `usuarios`
+      $idUser = mysqli_insert_id($conexao);
+
+      // Inserção na tabela `extras` com referência ao `idUser`
+      $queryExtras = "INSERT INTO extras (idUser, cep, nomeMae, DTnascimento) 
+                      VALUES ('$idUser', '$cep', '$nomeMae', '$DTnascimento')";
+      $resultExtras = mysqli_query($conexao, $queryExtras);
+
+      if ($resultExtras) {
+        echo json_encode(['status' => 'sucesso', 'mensagem' => 'Usuário inserido com sucesso!']);
+      } else {
+        echo json_encode(['status' => 'erro', 'mensagem' => 'Erro ao inserir dados na tabela extras.']);
+      }
+    } else {
+      echo json_encode(['status' => 'erro', 'mensagem' => 'Erro ao inserir dados na tabela usuarios.']);
+    }
+  } else {
     echo "Ruimmm";
   }
-  
 ?>
